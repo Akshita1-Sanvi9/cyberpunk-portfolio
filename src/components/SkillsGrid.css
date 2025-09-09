@@ -1,0 +1,173 @@
+:root {
+  --neon-cyan: #00FFFF;
+  --neon-yellow: #FFFF00;
+  --neon-pink: #FF00FF;
+  --bg-dark: #000000;
+}
+
+.skills-section {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+
+.skills-main-heading {
+  font-family: 'Terminal', monospace;
+  font-size: clamp(4.5rem, 5vw, 5rem);
+  color: #111111;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  text-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink);
+  letter-spacing: 0.1em;
+  animation: fadeInHeading 2s ease-in-out;
+}
+
+@keyframes fadeInHeading {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* === Grid Container === */
+.skills-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem; 
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .skills-grid-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.skills-box {
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 2px solid var(--neon-pink);
+  border-radius: 1rem;
+  padding: 2rem;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 30px var(--neon-pink);
+  transition: transform 0.3s ease;
+}
+
+.skills-box:hover {
+  transform: scale(1.02);
+}
+
+.skills-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  gap: 0.5rem;
+}
+
+.skills-title {
+  font-family: 'Terminal', monospace;
+  font-size: 1.75rem;
+  color: var(--neon-yellow);
+  letter-spacing: 0.05em;
+}
+
+
+.skills-header svg {
+  transition: transform 0.3s ease, filter 0.3s ease;
+  animation: pulse 2s infinite;
+}
+
+.icon-frontend {
+  color: #FF4D6D;
+  filter: drop-shadow(0 0 8px #FF4D6D);
+}
+
+.icon-backend {
+  color: #38BDF8;
+  filter: drop-shadow(0 0 8px #38BDF8);
+}
+
+.icon-tools {
+  color: #FFE600;
+  filter: drop-shadow(0 0 8px #FFE600);
+}
+
+.skills-header svg:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 12px var(--neon-pink)) drop-shadow(0 0 24px var(--neon-pink));
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.skills-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.skill-card {
+  background-color: var(--bg-dark);
+  border: 1px solid var(--neon-yellow);
+  font-family: 'Terminal', monospace;
+  font-size: 1.25rem;
+  text-align: center;
+  padding: 1rem;
+  word-break: break-word;
+  transform: scale(0.98);
+  border-radius: 0.75rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: scale(1.05);
+}
+
+.text-html { color: #FF4D6D; }
+.text-css { color: #4DFFB2; }
+.text-js { color: #FFE600; }
+.text-react { color: #61DAFB; }
+.text-tailwind { color: #38BDF8; }
+.text-vite { color: #646CFF; }
+.text-node { color: #8CC84B; }
+.text-express { color: #FFFFFF; }
+.text-git { color: #F1502F; }
+.text-github { color: #FFFFFF; }
+.text-vscode { color: #007ACC; }
+.text-postman { color: #FF6C37; }
+
+.text-html:hover { box-shadow: 0 0 20px #FF4D6D, 0 0 40px #FF4D6D; }
+.text-css:hover { box-shadow: 0 0 20px #4DFFB2, 0 0 40px #4DFFB2; }
+.text-js:hover { box-shadow: 0 0 20px #FFE600, 0 0 40px #FFE600; }
+.text-react:hover { box-shadow: 0 0 20px #61DAFB, 0 0 40px #61DAFB; }
+.text-tailwind:hover { box-shadow: 0 0 20px #38BDF8, 0 0 40px #38BDF8; }
+.text-vite:hover { box-shadow: 0 0 20px #646CFF, 0 0 40px #646CFF; }
+.text-node:hover { box-shadow: 0 0 20px #8CC84B, 0 0 40px #8CC84B; }
+.text-express:hover { box-shadow: 0 0 20px #FFFFFF, 0 0 40px #FFFFFF; }
+.text-git:hover { box-shadow: 0 0 20px #F1502F, 0 0 40px #F1502F; }
+.text-github:hover { box-shadow: 0 0 20px #FFFFFF, 0 0 40px #FFFFFF; }
+.text-vscode:hover { box-shadow: 0 0 20px #007ACC, 0 0 40px #007ACC; }
+.text-postman:hover { box-shadow: 0 0 20px #FF6C37, 0 0 40px #FF6C37; }
+
+@media (max-width: 480px) {
+  .skills-box {
+    padding: 1.2rem;
+  }
+
+  .skills-title {
+    font-size: 1.4rem;
+  }
+
+  .skill-card {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+
+  .skill-card:active {
+    transform: scale(0.98);
+  }
+
+  .skills-header svg {
+    font-size: 2rem;
+  }
+}
